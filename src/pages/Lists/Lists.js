@@ -18,7 +18,7 @@ export default class Lists extends Component {
       .get("https://koreanjson.com/posts")
       .then(result => {
         this.setState({
-          posts: result.data
+          posts: result.data.reverse()
         });
       })
       .catch(err => console.log(err));
