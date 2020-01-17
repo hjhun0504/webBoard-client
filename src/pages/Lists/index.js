@@ -1,19 +1,35 @@
 import React from "react";
-import ListEntry from "./ListEntry";
-import WriteButton from "./WriteButton";
-import SearchBar from "./SearchBar";
+import { ListEntry, ListHead, SearchBar, WriteButton } from "./components/";
+import "./index.css";
 
 const Lists = () => {
   return (
-    <div>
-      <div>번호 / 제목 / 글쓴이 / 작성일</div>
-      <ListEntry />
-      <ListEntry />
-      <ListEntry />
-      <WriteButton />
-      <div>1 2 3 4 5</div>
-      <SearchBar />
-    </div>
+    <>
+      <table className="board">
+        <ListHead />
+        <tbody>
+          <ListEntry />
+          <ListEntry />
+          <ListEntry />
+          <ListEntry />
+          <ListEntry />
+          <ListEntry />
+          <ListEntry />
+          <ListEntry />
+          <ListEntry />
+        </tbody>
+      </table>
+
+      <div className="lists__buttons">
+        <WriteButton />
+      </div>
+
+      <div className="lists__paging">1 2 3 4 5</div>
+
+      <div className="lists__search">
+        <SearchBar />
+      </div>
+    </>
   );
 };
 

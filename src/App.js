@@ -6,7 +6,7 @@ import { Lists } from "./pages";
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="app-wrapper">
         <Title />
         <Route exact path={["/", "/lists"]} component={Lists} />
       </div>

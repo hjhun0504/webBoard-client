@@ -1,0 +1,45 @@
+.board,
+table {
+  width: 100%;
+  font-size: 13px;
+  color: #333333;
+}
+
+/* table head, table data */
+th,
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+th {
+  border-top: 3px solid #3c4790;
+  border-bottom: 1px solid #3c4790;
+  font-weight: bold;
+  font-size: 12px;
+  height: 34px;
+}
+
+td {
+  height: 28px;
+}
+
+.lists__buttons {
+  padding-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lists__paging {
+  padding-top: 18px;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.lists__search {
+  padding-top: 18px;
+  display: flex;
+  justify-content: center;
+}
