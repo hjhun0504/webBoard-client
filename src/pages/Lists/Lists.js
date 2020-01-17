@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { ListEntry, ListHead, SearchBar, WriteButton } from "./components";
+import axios from "axios";
 import "./Lists.css";
-
-import { posts } from "../../__test__/fakeData";
+// import { posts } from "../../__test__/fakeData";
 
 export default class Lists extends Component {
   constructor(props) {
@@ -14,9 +14,14 @@ export default class Lists extends Component {
   }
 
   componentDidMount() {
-    this.setState({
-      posts: posts
-    });
+    axios
+      .get("https://koreanjson.com/posts")
+      .then(result => {
+        this.setState({
+          posts: result.data
+        });
+      })
+      .catch(err => console.log(err));
   }
 
   render() {
