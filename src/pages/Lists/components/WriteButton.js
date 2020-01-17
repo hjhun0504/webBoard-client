@@ -3,7 +3,7 @@ import React from "react";
 const WriteButton = () => {
   return (
     <div>
-      <button>글쓰기</button>
+      <button className="button button--blue">글쓰기</button>
     </div>
   );
 };

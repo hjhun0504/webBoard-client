@@ -1,0 +1,32 @@
+.list {
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.list:last-child {
+  border-bottom: 1px solid #3c4790;
+}
+
+.list__id {
+  width: 50px;
+  font-size: 11px;
+}
+
+.list__title {
+  padding-left: 10px;
+  text-align: left;
+}
+
+.list__icon {
+  color: #cececf;
+  margin-right: 4px;
+}
+
+.list__author {
+  width: 150px;
+}
+
+.list__createdAt {
+  font-family: Tahoma, sans-serif;
+  font-size: 11px;
+  width: 50px;
+}
