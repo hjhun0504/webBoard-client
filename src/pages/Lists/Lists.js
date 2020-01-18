@@ -20,6 +20,7 @@ export default class Lists extends Component {
         this.setState({
           posts: result.data.reverse()
         });
+        console.log(result);
       })
       .catch(err => console.log(err));
   }
