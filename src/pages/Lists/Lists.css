@@ -1,18 +1,16 @@
-.board,
-table {
+.board {
   width: 100%;
   font-size: 13px;
   color: #333333;
 }
 
-/* table head, table data */
-th,
-td {
+.board__head,
+.board__data {
   text-align: center;
   vertical-align: middle;
 }
 
-th {
+.board__head {
   border-top: 3px solid #3c4790;
   border-bottom: 1px solid #3c4790;
   font-weight: bold;
@@ -20,8 +18,12 @@ th {
   height: 34px;
 }
 
-td {
+.board__data {
   height: 28px;
+}
+
+.list__title {
+  text-align: left;
 }
 
 .lists__buttons {
