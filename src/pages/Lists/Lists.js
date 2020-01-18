@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { ListEntry, ListHead, SearchBar, WriteButton } from "./components";
+import { Link } from "react-router-dom";
+import { ListEntry, ListHead, SearchBar } from "./components";
+import Button from "../../components/Button";
 import axios from "axios";
 import "./Lists.css";
 // import { posts } from "../../__test__/fakeData";
@@ -38,7 +40,9 @@ export default class Lists extends Component {
         </table>
 
         <div className="lists__buttons">
-          <WriteButton />
+          <Link to="/write">
+            <Button title="글쓰기" css="button--blue"></Button>
+          </Link>
         </div>
 
         <div className="lists__paging">1 2 3 4 5</div>

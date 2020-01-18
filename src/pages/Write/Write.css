@@ -1,0 +1,10 @@
+.write-wrapper {
+  border: 2px solid #d5d5d5;
+  padding: 45px 70px;
+}
+
+.write__box {
+  width: 1000px;
+  height: 400px;
+  resize: none;
+}
