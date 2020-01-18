@@ -7,3 +7,12 @@
   margin-left: 150px;
   margin-right: 150px;
 }
+
+a {
+  color: #333333;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

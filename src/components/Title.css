@@ -4,3 +4,7 @@ header.title {
   color: #3c4790;
   margin-bottom: 10px;
 }
+
+.title:hover {
+  text-decoration: none !important;
+}
