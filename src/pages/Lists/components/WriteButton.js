@@ -1,9 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const WriteButton = () => {
   return (
     <div>
-      <button className="button button--blue">글쓰기</button>
+      <Link to="/write">
+        <button className="button button--blue">글쓰기</button>
+      </Link>
     </div>
   );
 };
