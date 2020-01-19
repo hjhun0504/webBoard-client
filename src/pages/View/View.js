@@ -14,7 +14,7 @@ export default class View extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://koreanjson.com/posts/${this.id}`)
+      .get(`http://localhost:4000/posts/${this.id}`)
       .then(result => {
         console.log(result);
         this.setState({ post: result.data });
@@ -29,7 +29,7 @@ export default class View extends Component {
           <article>
             <div>{this.state.post.title}</div>
             <div>
-              <span>글쓴이</span>
+              <span>{this.state.post.author}</span>
               <span>{this.state.post.createdAt}</span>
             </div>
             <div>{this.state.post.content}</div>
