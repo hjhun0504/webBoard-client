@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import axios from "axios";
+import "./View.css";
 
 export default class View extends Component {
   constructor(props) {
@@ -23,16 +24,19 @@ export default class View extends Component {
   }
 
   render() {
-    if (this.state.post) {
+    const post = this.state.post;
+
+    if (post) {
       return (
         <>
-          <article>
-            <div>{this.state.post.title}</div>
+          <article className="view">
+            <div className="view__title">{post.title}</div>
             <div>
-              <span>{this.state.post.author}</span>
-              <span>{this.state.post.createdAt}</span>
+              <span className="view__author">{post.author}</span>
+              <span className="view__time">{post.createdAt.slice(0, 10)}</span>
             </div>
-            <div>{this.state.post.content}</div>
+            <div className="view__underbar"></div>
+            <div className="view__content">{post.content}</div>
           </article>
           <div className="view__button-box">
             <Link to={`/modify/${this.id}`}>
