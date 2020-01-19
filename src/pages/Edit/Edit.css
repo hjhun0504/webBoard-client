@@ -2,4 +2,37 @@
   width: 400px;
   height: 220px;
   border: 3px solid #3c4790;
+
+  margin: 70px auto;
+  text-align: center;
+  vertical-align: middle;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit__title {
+  font-size: 15px;
+  font-weight: bold;
+  color: #3c4790;
+}
+
+.edit__password {
+  width: 158px;
+  height: 37px;
+  padding: 0 5px;
+  margin-top: 14px;
+  background: #f3f3f3;
+  border: 1px solid #cecdce;
+  font-size: 12px;
+}
+
+.edit__button-box {
+  padding-top: 15px;
+  width: 170px;
+
+  display: flex;
+  justify-content: space-between;
 }

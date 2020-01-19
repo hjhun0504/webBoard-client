@@ -13,11 +13,11 @@ export default class Edit extends Component {
   render() {
     return (
       <div className="edit-wrapper">
-        <div>비밀번호를 입력하세요.</div>
+        <div className="edit__title">비밀번호를 입력하세요.</div>
         <div>
-          <input></input>
+          <input className="edit__password" type="password"></input>
         </div>
-        <div>
+        <div className="edit__button-box">
           <Button title="취소" css="button--grey" />
           <Button title="확인" css="button--blue" />
         </div>
