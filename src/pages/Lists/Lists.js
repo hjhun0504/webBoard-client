@@ -17,12 +17,12 @@ export default class Lists extends Component {
 
   componentDidMount() {
     axios
-      .get("https://koreanjson.com/posts")
+      .get("http://localhost:4000/posts")
       .then(result => {
+        console.log(result.data);
         this.setState({
           posts: result.data.reverse()
         });
-        console.log(result);
       })
       .catch(err => console.log(err));
   }
