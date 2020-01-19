@@ -3,8 +3,42 @@
   padding: 45px 70px;
 }
 
+.write__author,
+.write__password,
+.write__title {
+  height: 30px;
+  padding: 0 12px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.write__author,
+.write__password {
+  width: 230px;
+  margin-right: 12px;
+}
+
+.write__title {
+  width: 600px;
+}
+
+.write__disclaimer {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.write__disclaimer__content {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
 .write__box {
-  width: 1000px;
+  width: 800px;
   height: 400px;
+  font-size: 13px;
+  padding: 8px 8px;
   resize: none;
+  margin-bottom: 10px;
 }
