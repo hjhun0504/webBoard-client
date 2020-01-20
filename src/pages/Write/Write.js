@@ -44,7 +44,7 @@ export default class Write extends Component {
           content: content
         })
         .then(result => {
-          console.log(result);
+          this.props.history.push(`/view/${result.data}`);
         })
         .catch(err => console.log(err));
     }
