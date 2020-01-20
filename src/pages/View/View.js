@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { Comments } from "./components";
 import Button from "../../components/Button";
 import axios from "axios";
 import "./View.css";
@@ -46,6 +47,7 @@ export default class View extends Component {
               <Button title="삭제" css="button--grey" />
             </Link>
           </div>
+          <Comments />
         </>
       );
     } else {
