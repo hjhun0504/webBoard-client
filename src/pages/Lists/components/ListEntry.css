@@ -2,6 +2,10 @@
   border-bottom: 1px solid #f3f3f3;
 }
 
+.list:hover {
+  background-color: #f3f3f3;
+}
+
 .list:last-child {
   border-bottom: 1px solid #3c4790;
 }
