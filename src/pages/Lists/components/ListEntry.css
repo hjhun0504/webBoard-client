@@ -16,6 +16,10 @@
   text-align: left;
 }
 
+.list__title:hover {
+  text-decoration: underline;
+}
+
 .list__icon {
   color: #cececf;
   margin-right: 4px;
