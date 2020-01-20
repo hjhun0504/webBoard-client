@@ -29,21 +29,25 @@ export default class Write extends Component {
     });
   }
 
-  handleSubmit(event) {
-    // event.preventDefault();
+  handleSubmit() {
     const { isLogin, author, password, title, content } = this.state;
-    axios
-      .post("http://localhost:4000/posts", {
-        isLogin: isLogin,
-        author: author,
-        password: password,
-        title: title,
-        content: content
-      })
-      .then(result => {
-        console.log(result);
-      })
-      .catch(err => console.log(err));
+
+    if (this.props.modify === "true") {
+      console.log("수정 요청 보낸다.");
+    } else {
+      axios
+        .post("http://localhost:4000/posts", {
+          isLogin: isLogin,
+          author: author,
+          password: password,
+          title: title,
+          content: content
+        })
+        .then(result => {
+          console.log(result);
+        })
+        .catch(err => console.log(err));
+    }
   }
 
   render() {
