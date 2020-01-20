@@ -33,7 +33,20 @@ export default class Write extends Component {
     const { isLogin, author, password, title, content } = this.state;
 
     if (this.props.modify === "true") {
-      console.log("수정 요청 보낸다.");
+      axios
+        .put(
+          `http://localhost:4000/posts/${this.props.modifyPostId}`,
+          {
+            author: author,
+            title: title,
+            content: content
+          },
+          { withCredentials: true }
+        )
+        .then(() => {
+          this.props.history.push(`/view/${this.props.modifyPostId}`);
+        })
+        .catch(err => console.log(err));
     } else {
       axios
         .post("http://localhost:4000/posts", {

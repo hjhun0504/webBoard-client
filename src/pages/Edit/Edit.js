@@ -36,8 +36,20 @@ export default class Edit extends Component {
           window.alert(err.response.data);
         });
     } else if (this.option === "modify") {
-      console.log("modify");
-      this.setState({ edit: true });
+      axios
+        .post(
+          `http://localhost:4000/posts/${this.id}`,
+          {
+            password: this.state.password
+          },
+          { withCredentials: true }
+        )
+        .then(() => {
+          this.setState({ edit: true });
+        })
+        .catch(err => {
+          window.alert(err.response.data);
+        });
     }
   }
 
@@ -72,7 +84,13 @@ export default class Edit extends Component {
         </div>
       );
     } else {
-      return <Write modify="true" />;
+      return (
+        <Write
+          modify="true"
+          modifyPostId={this.id}
+          history={this.props.history}
+        />
+      );
     }
   }
 }
