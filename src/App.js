@@ -16,6 +16,11 @@ class App extends Component {
           <Route path="/write" component={Write} />
           <Route path="/modify/:id" component={Edit} />
           <Route path="/delete/:id" component={Edit} />
+          <Route
+            render={({ location }) => (
+              <div>404 NOT FOUND : {location.pathname}</div>
+            )}
+          />
         </Switch>
       </div>
     );
