@@ -19,7 +19,7 @@ export default class View extends Component {
       .get(`http://localhost:4000/posts/${this.id}`)
       .then(result => {
         console.log(result);
-        this.setState({ post: result.data });
+        this.setState({ post: result.data[0] });
       })
       .catch(err => console.log(err));
   }
