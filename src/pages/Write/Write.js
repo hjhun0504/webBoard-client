@@ -64,6 +64,8 @@ export default class Write extends Component {
   }
 
   render() {
+    let { author, title, content } = this.props.postData;
+
     return (
       <div className="write-wrapper">
         <div>
@@ -72,6 +74,7 @@ export default class Write extends Component {
             className="write__author"
             type="text"
             placeholder="닉네임"
+            defaultValue={author}
             onChange={this.handleInputChange}
           />
           <input
@@ -79,6 +82,7 @@ export default class Write extends Component {
             className="write__password"
             type="password"
             placeholder="비밀번호"
+            defaultValue={this.props.password}
             onChange={this.handleInputChange}
           />
         </div>
@@ -88,6 +92,7 @@ export default class Write extends Component {
             className="write__title"
             type="text"
             placeholder="제목을 입력해 주세요."
+            defaultValue={title}
             onChange={this.handleInputChange}
           />
         </div>
@@ -104,6 +109,7 @@ export default class Write extends Component {
           <textarea
             name="content"
             className="write__box"
+            defaultValue={content}
             onChange={this.handleInputChange}
           ></textarea>
         </div>

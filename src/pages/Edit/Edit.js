@@ -11,7 +11,7 @@ export default class Edit extends Component {
     this.id = this.props.match.params.id;
     this.option = props.match.path.slice(1, 7); // modify or delete
 
-    this.state = { password: null, edit: false };
+    this.state = { password: null, edit: false, postData: null };
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePasswordSubmit = this.handlePasswordSubmit.bind(this);
@@ -22,7 +22,7 @@ export default class Edit extends Component {
     this.setState({ password: event.target.value });
   }
 
-  handlePasswordSubmit() {
+  async handlePasswordSubmit() {
     if (this.option === "delete") {
       axios
         .delete(`http://localhost:4000/posts/${this.id}`, {
@@ -36,20 +36,25 @@ export default class Edit extends Component {
           window.alert(err.response.data);
         });
     } else if (this.option === "modify") {
-      axios
-        .post(
+      try {
+        await axios.post(
           `http://localhost:4000/posts/${this.id}`,
           {
             password: this.state.password
           },
           { withCredentials: true }
-        )
-        .then(() => {
-          this.setState({ edit: true });
-        })
-        .catch(err => {
-          window.alert(err.response.data);
+        );
+        let { data } = await axios.get(
+          `http://localhost:4000/posts/${this.id}`
+        );
+        this.setState({
+          edit: true,
+          postData: data,
+          password: this.state.password
         });
+      } catch (error) {
+        window.alert(error.response.data);
+      }
     }
   }
 
@@ -89,6 +94,8 @@ export default class Edit extends Component {
           modify="true"
           modifyPostId={this.id}
           history={this.props.history}
+          postData={this.state.postData}
+          password={this.state.password}
         />
       );
     }
