@@ -1,0 +1,37 @@
+.comment-entry {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  border-bottom: 1px #eeeeee solid;
+  margin: 2px;
+}
+
+.comment-col {
+  display: inline-block;
+  margin: 0px 4px;
+  height: 36px;
+  line-height: 38px;
+}
+
+.comment-entry__author {
+  width: 100px;
+  font-size: 12px;
+}
+
+.comment-entry__content {
+  flex-grow: 1;
+  font-size: 13px;
+}
+
+.comment-entry__createdAt {
+  width: 100px;
+  font-size: 12px;
+  text-align: right;
+  color: #9a9a9a;
+}
+
+.comment-del {
+  margin-left: 5px;
+  font-size: 14px;
+  color: #cccccc;
+}

@@ -17,6 +17,7 @@ const Comments = () => {
         <CommentEntry />
         <CommentEntry />
       </div>
+
       <div className="comments__write-box">
         <div className="write-box__column">
           <input
@@ -31,11 +32,13 @@ const Comments = () => {
           />
         </div>
         <div className="write-box__column">
-          <input
+          <textarea
             className="input__content input"
             placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙 및 관련 법률에 제재를 받을 수 있습니다."
           />
-          <Button title="등록" css="button--blue" />
+          <div className="input__content__bottom">
+            <Button title="등록" css="button--blue" />
+          </div>
         </div>
       </div>
     </div>
