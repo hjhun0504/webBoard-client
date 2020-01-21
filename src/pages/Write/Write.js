@@ -64,7 +64,14 @@ export default class Write extends Component {
   }
 
   render() {
-    let { author, title, content } = this.props.postData;
+    let author = "";
+    let title = "";
+    let content = "";
+    if (this.props.postData) {
+      author = this.props.postData.author;
+      title = this.props.postData.title;
+      content = this.props.postData.content;
+    }
 
     return (
       <div className="write-wrapper">
