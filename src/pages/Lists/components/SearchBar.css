@@ -1,0 +1,28 @@
+.search-bar {
+  display: flex;
+}
+
+.search-bar__input {
+  width: 200px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 9px;
+}
+
+.search-bar__input:focus {
+  outline: none;
+}
+
+.search-bar__submit {
+  width: 39px;
+  height: 40px;
+  background-color: #4a57a8;
+  line-height: 44.5px;
+  text-align: center;
+}
+
+.search__btn {
+  font-size: 20px;
+  color: white;
+}

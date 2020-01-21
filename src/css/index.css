@@ -13,13 +13,17 @@ textarea {
   resize: none;
 }
 
-.input {
-  font-size: 12px;
-}
-
 .app-wrapper {
   margin-top: 30px;
   margin-bottom: 30px;
   margin-left: 150px;
   margin-right: 150px;
+}
+
+.input {
+  font-size: 12px;
+}
+
+.blue-bold-outline {
+  border: 4px #4a57a8 solid;
 }
