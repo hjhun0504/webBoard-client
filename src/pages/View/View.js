@@ -39,6 +39,7 @@ export default class View extends Component {
             <div className="view__underbar"></div>
             <div className="view__content">{post.content}</div>
           </article>
+          <Comments postId={this.id} />
           <div className="view__button-box">
             <Link to={`/modify/${this.id}`}>
               <Button title="수정" css="button--grey" />
@@ -47,7 +48,6 @@ export default class View extends Component {
               <Button title="삭제" css="button--grey" />
             </Link>
           </div>
-          <Comments postId={this.id} />
         </>
       );
     } else {

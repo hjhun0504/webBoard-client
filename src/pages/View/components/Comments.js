@@ -61,9 +61,14 @@ class Comments extends Component {
   }
 
   render() {
+    let css = "";
+    if (this.state.comments.length) {
+      css = "underbar";
+    }
+
     return (
       <div className="comments">
-        <div className="comments__count">
+        <div className={`comments__count ${css}`}>
           전체 리플 <font color="#D83F36">{this.state.comments.length}</font>개
         </div>
         <div className="comments__list">

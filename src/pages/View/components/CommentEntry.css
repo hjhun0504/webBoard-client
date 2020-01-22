@@ -6,6 +6,10 @@
   margin: 2px;
 }
 
+.comment-entry:last-child {
+  margin-bottom: 40px;
+}
+
 .comment-col {
   display: inline-block;
   margin: 0px 4px;
