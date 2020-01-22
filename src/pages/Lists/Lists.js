@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ListEntry, ListHead, SearchBar } from "./components";
 import Button from "../../components/Button";
 import axios from "axios";
+import qs from "qs";
 import "./Lists.css";
 // import { posts } from "../../__test__/fakeData";
 
@@ -10,21 +11,49 @@ export default class Lists extends Component {
   constructor(props) {
     super(props);
 
+    this.query = qs.parse(this.props.location.search, {
+      ignoreQueryPrefix: true
+    });
+
     this.state = {
       posts: []
     };
+
+    this.fetchData = this.fetchData.bind(this);
   }
 
-  componentDidMount() {
+  fetchData(keyword) {
     axios
-      .get("http://localhost:4000/posts")
+      .post("http://localhost:4000/search", { query: keyword })
       .then(result => {
-        console.log(result.data);
         this.setState({
           posts: result.data.reverse()
         });
       })
       .catch(err => console.log(err));
+  }
+
+  componentDidMount() {
+    if (this.query.search === "all" && this.query.keyword) {
+      axios
+        .post("http://localhost:4000/search", { query: this.query.keyword })
+        .then(result => {
+          this.setState({
+            posts: result.data.reverse()
+          });
+        })
+        .catch(err => console.log(err));
+    } else {
+      axios
+        .get("http://localhost:4000/posts")
+        .then(result => {
+          console.log(result.data);
+          this.setState({
+            posts: result.data.reverse()
+          });
+        })
+        .catch(err => console.log(err));
+    }
   }
 
   render() {
@@ -48,7 +77,7 @@ export default class Lists extends Component {
         <div className="lists__paging">1 2 3 4 5</div>
 
         <div className="lists__search">
-          <SearchBar />
+          <SearchBar history={this.props.history} fetchData={this.fetchData} />
         </div>
       </>
     );
