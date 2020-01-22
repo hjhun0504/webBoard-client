@@ -20,7 +20,7 @@
   text-align: left;
 }
 
-.list__title:hover {
+.list__title__content:hover {
   text-decoration: underline;
 }
 
@@ -37,4 +37,10 @@
   font-family: Tahoma, sans-serif;
   font-size: 11px;
   width: 62px;
+}
+
+.list__comment {
+  margin-left: 4px;
+  font-size: 11px;
+  color: #999;
 }
