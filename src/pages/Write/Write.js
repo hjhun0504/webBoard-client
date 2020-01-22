@@ -8,12 +8,24 @@ export default class Write extends Component {
   constructor(props) {
     super(props);
 
+    let author = "";
+    let password = "";
+    let title = "";
+    let content = "";
+
+    if (props.postData) {
+      author = props.postData.author;
+      password = props.password;
+      title = props.postData.title;
+      content = props.postData.content;
+    }
+
     this.state = {
       isLogin: false,
-      author: "",
-      password: "",
-      title: "",
-      content: ""
+      author: author,
+      password: password,
+      title: title,
+      content: content
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
