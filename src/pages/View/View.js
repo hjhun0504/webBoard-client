@@ -47,7 +47,7 @@ export default class View extends Component {
               <Button title="삭제" css="button--grey" />
             </Link>
           </div>
-          <Comments />
+          <Comments postId={this.id} />
         </>
       );
     } else {
