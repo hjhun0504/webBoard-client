@@ -25,9 +25,12 @@ export default class Edit extends Component {
   async handlePasswordSubmit() {
     if (this.option === "delete") {
       axios
-        .delete(`http://localhost:4000/posts/${this.id}`, {
-          data: { password: this.state.password }
-        })
+        .delete(
+          `http://ec2-18-218-35-47.us-east-2.compute.amazonaws.com:4000/posts/${this.id}`,
+          {
+            data: { password: this.state.password }
+          }
+        )
         .then(() => {
           window.alert("게시물이 삭제 되었습니다.");
           this.props.history.push("/");
@@ -38,14 +41,14 @@ export default class Edit extends Component {
     } else if (this.option === "modify") {
       try {
         await axios.post(
-          `http://localhost:4000/posts/${this.id}`,
+          `http://ec2-18-218-35-47.us-east-2.compute.amazonaws.com:4000/posts/${this.id}`,
           {
             password: this.state.password
           },
           { withCredentials: true }
         );
         let { data } = await axios.get(
-          `http://localhost:4000/posts/${this.id}`
+          `http://ec2-18-218-35-47.us-east-2.compute.amazonaws.com:4000/posts/${this.id}`
         );
         this.setState({
           edit: true,

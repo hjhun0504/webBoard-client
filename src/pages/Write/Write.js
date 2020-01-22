@@ -47,7 +47,7 @@ export default class Write extends Component {
     if (this.props.modify === "true") {
       axios
         .put(
-          `http://localhost:4000/posts/${this.props.modifyPostId}`,
+          `http://ec2-18-218-35-47.us-east-2.compute.amazonaws.com:4000/posts/${this.props.modifyPostId}`,
           {
             author: author,
             password: password,
@@ -62,13 +62,16 @@ export default class Write extends Component {
         .catch(err => console.log(err));
     } else {
       axios
-        .post("http://localhost:4000/posts", {
-          isLogin: isLogin,
-          author: author,
-          password: password,
-          title: title,
-          content: content
-        })
+        .post(
+          "http://ec2-18-218-35-47.us-east-2.compute.amazonaws.com:4000/posts",
+          {
+            isLogin: isLogin,
+            author: author,
+            password: password,
+            title: title,
+            content: content
+          }
+        )
         .then(result => {
           this.props.history.push(`/view/${result.data}`);
         })

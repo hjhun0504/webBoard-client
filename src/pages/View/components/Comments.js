@@ -31,13 +31,16 @@ class Comments extends Component {
   handleSubmit() {
     const { author, content, password } = this.state;
     axios
-      .post("http://localhost:4000/comments", {
-        isLogin: false,
-        postId: this.props.postId,
-        author: author,
-        password: password,
-        content: content
-      })
+      .post(
+        "http://ec2-18-218-35-47.us-east-2.compute.amazonaws.com:4000/comments",
+        {
+          isLogin: false,
+          postId: this.props.postId,
+          author: author,
+          password: password,
+          content: content
+        }
+      )
       .then(result => {
         this.setState({ comments: result.data });
       })
@@ -50,7 +53,9 @@ class Comments extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:4000/posts/comments/${this.props.postId}`)
+      .get(
+        `http://ec2-18-218-35-47.us-east-2.compute.amazonaws.com:4000/posts/comments/${this.props.postId}`
+      )
       .then(result => {
         console.log(result.data);
         this.setState({

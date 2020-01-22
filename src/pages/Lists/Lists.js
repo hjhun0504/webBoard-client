@@ -24,7 +24,10 @@ export default class Lists extends Component {
 
   fetchData(keyword) {
     axios
-      .post("http://localhost:4000/search", { query: keyword })
+      .post(
+        "http://ec2-18-218-35-47.us-east-2.compute.amazonaws.com:4000/search",
+        { query: keyword }
+      )
       .then(result => {
         this.setState({
           posts: result.data.reverse()
@@ -36,7 +39,10 @@ export default class Lists extends Component {
   componentDidMount() {
     if (this.query.search === "all" && this.query.keyword) {
       axios
-        .post("http://localhost:4000/search", { query: this.query.keyword })
+        .post(
+          "http://ec2-18-218-35-47.us-east-2.compute.amazonaws.com:4000/search",
+          { query: this.query.keyword }
+        )
         .then(result => {
           this.setState({
             posts: result.data.reverse()
@@ -45,7 +51,9 @@ export default class Lists extends Component {
         .catch(err => console.log(err));
     } else {
       axios
-        .get("http://localhost:4000/posts")
+        .get(
+          "http://ec2-18-218-35-47.us-east-2.compute.amazonaws.com:4000/posts"
+        )
         .then(result => {
           console.log(result.data);
           this.setState({

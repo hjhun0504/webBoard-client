@@ -16,7 +16,9 @@ export default class View extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:4000/posts/${this.id}`)
+      .get(
+        `http://ec2-18-218-35-47.us-east-2.compute.amazonaws.com:4000/posts/${this.id}`
+      )
       .then(result => {
         console.log(result);
         this.setState({ post: result.data });
