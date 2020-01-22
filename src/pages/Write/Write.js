@@ -50,6 +50,7 @@ export default class Write extends Component {
           `http://localhost:4000/posts/${this.props.modifyPostId}`,
           {
             author: author,
+            password: password,
             title: title,
             content: content
           },

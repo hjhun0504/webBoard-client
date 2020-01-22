@@ -74,7 +74,7 @@ export default class Lists extends Component {
           </Link>
         </div>
 
-        <div className="lists__paging">1 2 3 4 5</div>
+        {/* <div className="lists__paging">1 2 3 4 5</div> */}
 
         <div className="lists__search">
           <SearchBar history={this.props.history} fetchData={this.fetchData} />
